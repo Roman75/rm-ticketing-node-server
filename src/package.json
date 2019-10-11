@@ -1,0 +1,41 @@
+{
+  "name": "ticketing",
+  "version": "0.0.1",
+  "description": "ticketing system",
+  "main": "run.js",
+  "scripts": {
+    "start": "node run.js",
+    "dev": "sh node_modules/.bin/nodemon run.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Roman75/rm-ticketing-node-server.git"
+  },
+  "author": "Roman Marlovits <roman.marlovits@gmail.com> (http://www.webcomplete.at)",
+  "license": "ISC",
+  "dependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "dateformat": "^3.0.3",
+    "hash.js": "^1.1.7",
+    "js-yaml": "^3.13.1",
+    "lodash": "^4.17.15",
+    "md5": "^2.2.1",
+    "mime": "^2.4.4",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.26",
+    "mpay24-node": "^0.1.6",
+    "mysql": "^2.17.1",
+    "nodemailer": "^6.3.1",
+    "numeral": "^2.0.6",
+    "pdfkit": "^0.10.0",
+    "qrcode": "^1.4.2",
+    "rand-token": "^0.4.0",
+    "rm-log": "^1.2.9",
+    "socket.io": "^2.3.0",
+    "validator": "^11.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.3"
+  }
+}

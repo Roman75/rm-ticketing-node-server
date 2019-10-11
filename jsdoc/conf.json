@@ -1,0 +1,74 @@
+{
+	"tags": {
+		"allowUnknownTags": true
+	},
+	"source": {
+		"include": [],
+		"exclude": ["src/node_modules"],
+		"includePattern": ".+\\.js(doc|x)?$",
+		"excludePattern": "(node_modules|documentation)"
+	},
+	"plugins": [],
+	"templates": {
+		"cleverLinks": false,
+		"monospaceLinks": false,
+		"default": {
+			"outputSourceFiles": true
+		}
+	},
+	"opts": {
+		"template": "node_modules/docdash",
+		"encoding": "utf8",
+		"recurse": true,
+		"verbose": true
+	},
+	"docdash": {
+		"static": false,
+		"sort": false,
+		"sectionOrder": [
+			"Namespaces",
+			"Modules",
+			"Events",
+			"Classes",
+			"Externals",
+			"Mixins",
+			"Tutorials",
+			"Interfaces"
+		],
+		"disqus": "",
+		"openGraph": {
+			"title": "",
+			"type": "website",
+			"image": "",
+			"site_name": "",
+			"url": ""
+		},
+		"meta": {
+			"title": "",
+			"description": "",
+			"keyword": ""
+		},
+		"search": true,
+		"collapse": true,
+		"wrap": false,
+		"typedefs": false,
+		"navLevel": -1,
+		"private": false,
+		"removeQuotes": "none",
+		"scripts": [],
+		"menu": {
+			"Project Website": {
+				"href": "https://github.com/Roman75/rm-ticketing-node-server",
+				"target": "_blank",
+				"class": "menu-item",
+				"id": "website_link"
+			},
+			"Forum": {
+				"href": "https://github.com/Roman75/rm-ticketing-node-server/issues",
+				"target": "_blank",
+				"class": "menu-item",
+				"id": "forum_link"
+			}
+		}
+	}
+}
