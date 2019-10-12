@@ -1,10 +1,10 @@
 {
-  "name": "ticketing",
+  "name": "rm-ticketing-node-server",
   "version": "0.0.1",
   "description": "ticketing system",
   "main": "run.js",
   "scripts": {
-    "start": "node run.js",
+    "start": "node /node/app/run.js",
     "dev": "sh node_modules/.bin/nodemon ./src/run.js"
   },
   "repository": {
