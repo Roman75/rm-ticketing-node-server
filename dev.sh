@@ -1,4 +1,3 @@
 #!/bin/bash
-cd src/
-npm run dev
+cd src && npm run dev
 cd ..

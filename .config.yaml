@@ -1,7 +1,8 @@
+# misc
 server:
   sleep: 100 # wait for startup in ms
-  db: 'mysql' # mysql or mssql
 
+# logging
 log:
   logfile: true
   err: true
@@ -15,7 +16,7 @@ log:
     debug: 'cyan'
     err: 'gray'
 
-# http for documentation
+# http
 http:
   port: 8080
 #  domain: 'localhost.int'
@@ -24,6 +25,7 @@ http:
 #     key: '/etc/ssl/certs/localhost.key'
 #     cert: '/etc/ssl/certs/localhost.cert'
 
+# socket
 socket:
   logoutTokenTimeout: 10000 # logout token expires in ms
   mail:
@@ -61,27 +63,14 @@ socket:
           refreshToken:               # is the refresh token to generate new access token if needed
           accessToken:                # is the access token
 
+# mysql database
 mysql:
   debug: false
   conn:
     debug: false
-#    host: 'ticketing_mysql_dev'
     host: 'localhost'
     user: 'ticketing_user'
     password: 'h4G7f8OP'
     database: 'ticketing_db'
     connectionLimit: 5
     timezone: 'utc'
-
-#mssql:
-#  debug: true
-#  conn:
-#    server: 'ticketing_mssql_dev'
-#    user: 'ticketing_user'
-#    password: 'h4G7f8OP'
-#    database: 'ticketing_db'
-#    pool:
-#      max: 10
-#      min: 0
-#      idleTimeoutMillis: 30000
-

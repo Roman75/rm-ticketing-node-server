@@ -5,7 +5,7 @@
   "main": "run.js",
   "scripts": {
     "start": "node run.js",
-    "dev": "sh node_modules/.bin/nodemon run.js"
+    "dev": "sh node_modules/.bin/nodemon ./src/run.js"
   },
   "repository": {
     "type": "git",
@@ -36,6 +36,8 @@
     "validator": "^11.1.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.3"
+    "nodemon": "^1.19.3",
+    "docdash": "^1.0.3",
+    "jsdoc": "^3.5.5"
   }
 }

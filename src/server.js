@@ -23,10 +23,7 @@ try {
 }
 
 global.LOG = new RmLog(config.log);
-
-if (config.server.db === 'mysql') {
-	global.DB = new MySql(config.mysql);
-}
+global.DB = new MySql(config.mysql);
 
 function start() {
 	if (config) {
