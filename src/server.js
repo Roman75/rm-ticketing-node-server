@@ -20,6 +20,70 @@ try {
 	}
 } catch (e) {
 	console.error(e);
+	config = {
+		server: {
+			sleep: 100
+		},
+		log: {
+			logfile: true,
+			err: true,
+			info: true,
+			debug: true,
+			msg: true,
+			datePattern: 'yyyy-mm-dd HH:MM:ss',
+			colors: {
+				msg: 'green',
+				info: 'blue',
+				debug: 'cyan',
+				err: 'gray'
+			}
+		},
+		http: {
+			port: 8080
+		},
+		socket: {
+			logoutTokenTimeout: 10000,
+			mail: {
+				smtp: {
+					from: 'ticketing@webcomplete.at',
+					options: {
+						port: 587,
+						host: 'mail.your-server.de',
+						logger: true,
+						debug: true,
+						tls: {
+							rejectUnauthorized: false
+						}
+					},
+					login: {
+						credentials: {
+							user: 'ticketing@webcomplete.at',
+							pass: 'OfcDV84Ocs2u95M5'
+						},
+						oauth2: {
+							user: null,
+							clientId: null,
+							clientSecret: null,
+							refreshToken: null,
+							accessToken: null
+						}
+					}
+				}
+			}
+		},
+		mysql: {
+			debug: false,
+			conn: {
+				debug: false,
+				host: 'localhost',
+				user: 'ticketing_user',
+				password: 'Passw0Rd!',
+				database: 'ticketing_db',
+				connectionLimit: 5,
+				timezone: 'utc'
+			}
+		}
+	}
 }
 
 global.LOG = new RmLog(config.log);
