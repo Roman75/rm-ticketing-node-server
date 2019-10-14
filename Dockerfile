@@ -1,4 +1,5 @@
 FROM node:lts-alpine
+ADD VERSION .
 RUN mkdir /node
 RUN mkdir /node/app
 WORKDIR /node

@@ -1,2 +1,8 @@
 #!/bin/bash
-docker build -t romarius75/rm-ticketing-node-server:latest -t romarius75/rm-ticketing-node-server:v0.0.1 .
+set -ex
+
+USERNAME=romarius75
+IMAGE=rm-ticketing-node-server
+
+docker build -t $USERNAME/$IMAGE:latest .
+
