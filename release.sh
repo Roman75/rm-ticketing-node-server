@@ -1,7 +1,7 @@
 #!/bin/bash
 #set -ex
 
-$version=0.0.7
+version=0.0.7
 
 #USERNAME=romarius75
 #PASSWORD=M2sZS15uD13
