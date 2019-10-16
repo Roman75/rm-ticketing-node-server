@@ -7,7 +7,7 @@ import fs from 'fs';
 import _ from 'lodash';
 
 let log, config = null;
-const logPrefix = 'SERVER  ';
+const logPrefix = 'node    ';
 
 try {
 	config = yaml.safeLoad(fs.readFileSync('./config.yaml', 'utf8'));
@@ -25,28 +25,32 @@ try {
 }
 
 global.LOG = new RmLog(config.log);
-global.DB = new MySql(config.mysql);
 
 function start() {
 	if (config) {
-		const http = new Http(config.http);
-		global.SOCKET = new Socket(_.extend(config.socket, {'http': http.getServer()}));
-		SOCKET.connections = 0;
-		http.start();
-		LOG.msg(logPrefix, 'sleep ' + (config.server.sleep / 1000) + ' second(s)');
 
+		const http = new Http(config.http);
+
+		global.DB = new MySql(config.mysql);
 		DB.promiseQuery('TRUNCATE TABLE memClientConn').then(res => {
 			LOG.msg(logPrefix, 'removed all entries from \'memClientConn\'');
 		}).catch(err => {
 			LOG.err(logPrefix, 'could not remove from \'memClientConn\'');
 			console.log(err);
 		});
+
+		global.SOCKET = new Socket(_.extend(config.socket, {'http': http.getServer()}));
+		SOCKET.connections = 0;
+
+		http.start();
 	} else {
 		log.err(logPrefix, 'no configuration found');
 	}
 }
 
+LOG.msg(logPrefix, 'sleep ' + (config.server.sleep / 1000) + ' second(s)');
 setTimeout(() => {
+	LOG.msg(logPrefix, 'start server now');
 	start();
 }, config.server.sleep);
 
