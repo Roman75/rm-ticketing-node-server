@@ -8,8 +8,15 @@ on your docker host create config file in '/etc/rm-ticketing/node/config.yaml'
  
 run docker container
 ```bash
-docker run -v config.yaml:/app/config.yaml romarius75/rm-ticketing-node-server:latest
+cd rm-ticketing-node-server
+sh jsdoc.sh
+docker build --force-rm --no-cache -t rm-ticketing-node-server .
+docker run --name=rm-ticketing-node-server -p 8080:8080 -d -v e:\git\rm-ticketing\rm-ticketing-node-server\config.yaml:/app/config.yaml rm-ticketing-node-server
+cd ..
 ```
+
+
+
 
 run docker compose
 ```yaml
