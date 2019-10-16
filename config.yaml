@@ -68,9 +68,9 @@ mysql:
   debug: false
   conn:
     debug: false
-    host: 'localhost'
-    user: 'ticketing_user'
-    password: 'h4G7f8OP'
+    host: 'rm-ticketing-mysql-server'
+    user: 'root'
+    password: 'Passw0Rd!'
     database: 'ticketing_db'
     connectionLimit: 5
     timezone: 'utc'
