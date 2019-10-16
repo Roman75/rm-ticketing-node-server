@@ -44,7 +44,7 @@ class Socket extends Helpers {
 
 	/**
 	 * basic class for socket server
-	 * @param config {Object} configuration settings from ./../.config.yaml
+	 * @param config {Object} configuration settings from config.yaml
 	 *
 	 */
 	constructor(config) {

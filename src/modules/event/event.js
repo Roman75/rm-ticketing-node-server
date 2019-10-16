@@ -30,7 +30,7 @@ class Event extends Module {
 			EventFax: {type: 'string', length: 30, empty: true}, // varchar(30) NULL COMMENT 'fax number for the Event',
 			EventEmail: {type: 'email', length: 250, empty: true}, // varchar(250) NULL COMMENT 'email for the Event',
 			EventHomepage: {type: 'string', length: 250, empty: true}, //  varchar(250) NULL COMMENT 'homepage for the Event',
-			EventSubdomain: {type: 'string', length: 50, empty: true, hasNot: ['www', 'admin', 'libs', 'scan', '_acme-challenge', 'mail', 'ftp', 'imap', 'pop', 'relay', 'smtp', 'app']}, // varchar(50) NULL COMMENT 'subdomain for the Event eg zuckerbaecker-ball-2020 (.ballcomplete.at will be automatical extended => tld comes from file .config.yaml)',
+			EventSubdomain: {type: 'string', length: 50, empty: true, hasNot: ['www', 'admin', 'libs', 'scan', '_acme-challenge', 'mail', 'ftp', 'imap', 'pop', 'relay', 'smtp', 'app']}, // varchar(50) NULL COMMENT 'subdomain for the Event eg zuckerbaecker-ball-2020 (.ballcomplete.at will be automatical extended => tld comes from file config.yaml)',
 			EventStartBillNumber: {type: 'integer', length: 6, empty: false}, // int(6) NOT NULL DEFAULT 100 COMMENT 'the first bill number for the first order',
 			EventMaximumVisitors: {type: 'integer', length: 6, empty: false}, // int(6) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'maximum visitors for this event (count all tickets from type ticket all others are exluded)',
 			EventMaximumSeats: {type: 'integer', length: 2, empty: false}, // tinyint(2) UNSIGNED NOT NULL DEFAULT 20 COMMENT 'maximum seats per order',
