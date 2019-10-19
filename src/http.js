@@ -3,7 +3,6 @@ import http from 'http';
 import https from 'https';
 import url from 'url';
 import mime from 'mime';
-import _ from 'lodash';
 
 const logPrefix = 'HTTP(s) ';
 
@@ -32,59 +31,26 @@ class Http {
 			let documentRoot = __dirname + '/www';
 			let urlParse = url.parse(req.url, true);
 			let pathname = urlParse.pathname;
-			let hostArray = (req && req.headers && req.headers.host) ? req.headers.host.split('.') : null;
+			let urlPath = (pathname.slice(-1) !== '/') ? pathname : pathname + 'index.html';
+			let encoding = '';
+			let file = false;
 
-			if (_.isArray(hostArray) && _.size(hostArray) > 1) {
-
-				let domain = req.headers.host;
-				if (_.size(hostArray) === 2) {
-					hostArray[2] = hostArray[1];
-					hostArray[1] = hostArray[0];
-					hostArray[0] = 'www';
-					domain = hostArray[0] + '.' + hostArray[1] + '.' + hostArray[2];
+			try {
+				let mimeType = mime.getType(documentRoot + urlPath);
+				if (mimeType === 'text/html') {
+					encoding = 'utf8';
 				}
-				//if (hostArray[1] + '.' + hostArray[2] === this._config.domain) {
-
-					let subdomain = (req && req.headers && req.headers.host) ? req.headers.host.split('.')[0] : 'www';
-					if (pathname.indexOf('/libs/') !== -1 || pathname.indexOf('favicon.ico') !== -1) {
-						subdomain = 'www';
-					}
-					/*
-					if (subdomain == 'www') {
-						documentRoot += '/page/';
-					} else if (subdomain == 'admin') {
-						documentRoot += '/admin/';
-					} else if (subdomain == 'scan') {
-						documentRoot += '/scan/';
-					} else if (subdomain == 'app') {
-						documentRoot += '/app/';
-					} else {
-						res.writeHead(301, {Location: ((req.connection.encrypted) ? 'https' : 'http') + '://www.' + hostArray[1] + '.' + hostArray[2] + '#' + subdomain});
-						res.end();
-					}
-					 */
-
-					let urlPath = (pathname.slice(-1) !== '/') ? pathname : pathname + 'index.html';
-					let encoding = '';
-					let file = false;
-					try {
-						let mimeType = mime.getType(documentRoot + urlPath);
-						if (mimeType === 'text/html') {
-							encoding = 'utf8';
-						}
-						if (!file) {
-							file = fs.readFileSync(documentRoot + urlPath, encoding);
-							res.setHeader("Content-Type", mimeType);
-						}
-						LOG.msg(logPrefix, urlPath + ' ' + mimeType);
-						res.writeHead(200);
-						res.end(file);
-					} catch (e) {
-						LOG.err(logPrefix, urlPath);
-						res.writeHead(404);
-						res.end()
-					}
-				//}
+				if (!file) {
+					file = fs.readFileSync(documentRoot + urlPath, encoding);
+					res.setHeader("Content-Type", mimeType);
+				}
+				LOG.msg(logPrefix, urlPath + ' ' + mimeType);
+				res.writeHead(200);
+				res.end(file);
+			} catch (e) {
+				LOG.err(logPrefix, urlPath);
+				res.writeHead(404);
+				res.end()
 			}
 		});
 	}
@@ -110,6 +76,6 @@ class Http {
 			res.end();
 		}).listen(80);
 	}
-};
+}
 
 module.exports = Http;
