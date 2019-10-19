@@ -108,10 +108,10 @@ class Socket extends Helpers {
 		let headers = {};
 		_.each(client.handshake.headers, (value, header) => {
 			headers[header] = value;
-			if (header === 'X-Real-IP') {
+			if ((header === 'X-Real-IP' || header === 'x-real-ip') && value) {
 				client.handshake.address = value;
 			}
-			if (header === 'Host') {
+			if ((header === 'Host' || header === 'host') && value) {
 				client.handshake.headers.host = value;
 			}
 		});
