@@ -105,6 +105,17 @@ class Socket extends Helpers {
 			}
 		});
 
+		let headers = {};
+		_.each(client.handshake.headers, (value, header) => {
+			headers[header] = value;
+			if (header === 'X-Real-IP') {
+				client.handshake.address = value;
+			}
+			if (header === 'Host') {
+				client.handshake.headers.host = value;
+			}
+		});
+
 		let values = {
 			ClientConnID: client.id,
 			ClientConnToken: client.userdata.ConnToken,
@@ -117,7 +128,10 @@ class Socket extends Helpers {
 		DB.promiseInsert('memClientConn', values).then((res) => {
 			SOCKET.connections++;
 			client.emit('connect', res);
-			this.logSocketMessage(client.id, 'client connected', values.ClientConnSubdomain + ' => ' + client.handshake.time + ' => ' + client.handshake.address);
+			this.logSocketMessage(client.id, 'client', values.ClientConnSubdomain + ' => ' + client.handshake.time + ' => ' + client.handshake.address);
+			_.each(headers, (value, header) => {
+				this.logSocketMessage(client.id, 'header', header + ' => ' + value);
+			});
 		}).catch((err) => {
 			client.emit('connect-err', err);
 			this.logSocketError(client.id, 'connection', err);
