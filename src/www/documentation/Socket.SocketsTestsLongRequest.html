@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>SocketEvent - Documentation</title>
+    <title>SocketsTestsLongRequest - Documentation</title>
     
     
     
@@ -43,7 +43,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">SocketEvent</h1>
+    <h1 class="page-title">SocketsTestsLongRequest</h1>
     
 
     
@@ -58,10 +58,10 @@
         <h2>
             <span class="ancestors"><a href="Socket.html">Socket</a>~</span>
         
-        SocketEvent
+        SocketsTestsLongRequest
         </h2>
         
-            <div class="class-description">event events</div>
+            <div class="class-description">sockets tests long request</div>
         
     
 </header>
@@ -76,7 +76,7 @@
     <h2>Constructor</h2>
     
 
-    <h4 class="name" id="SocketEvent"><span class="type-signature"></span>new SocketEvent<span class="signature">(client)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="SocketsTestsLongRequest"><span class="type-signature"></span>new SocketsTestsLongRequest<span class="signature">(client)</span><span class="type-signature"></span></h4>
 
     
 
@@ -88,7 +88,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="socket_event.js.html">socket_event.js</a>, <a href="socket_event.js.html#line17">line 17</a>
+        <a href="sockets_tests_long_request.js.html">sockets_tests_long_request.js</a>, <a href="sockets_tests_long_request.js.html#line15">line 15</a>
     </li></ul></dd>
     
 
@@ -128,7 +128,7 @@
 
 
 <div class="description">
-    constructor for list socket events<br>
+    constructor for user socket events<br>
 </div>
 
 
@@ -233,7 +233,7 @@
 
     
 
-    <h4 class="name" id="onCreate"><span class="type-signature"></span>onCreate<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="onRequest"><span class="type-signature"></span>onRequest<span class="signature">()</span><span class="type-signature"></span></h4>
 
     
 
@@ -245,7 +245,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="socket_event.js.html">socket_event.js</a>, <a href="socket_event.js.html#line88">line 88</a>
+        <a href="sockets_tests_long_request.js.html">sockets_tests_long_request.js</a>, <a href="sockets_tests_long_request.js.html#line30">line 30</a>
     </li></ul></dd>
     
 
@@ -285,7 +285,7 @@
 
 
 <div class="description">
-    create new event
+    request and wait milliseconds to respond to client
 </div>
 
 
@@ -298,657 +298,11 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>socket.on('event-create', (res)=>{console.log(res);});socket.on('event-create-err', (err)=>{console.log(err);});socket.emit('event-create', {	'EventID': null,	'EventPromoterID': 'PromoterID | null',	'EventLocationID': 'LocationID | null',	'EventName': 'Event Name',	'EventPrefix': 'DEMO1', // 5 characters	'EventPhone1': '+43123',	'EventPhone2': '+43456',	'EventFax': '+43789',	'EventEmail': 'event.email@test.tld',	'EventHomepage': 'http://eventhomepage.tld',	'EventSubdomain': 'epre-event-2019',	'EventStartBillNumber': 1234,	'EventMaximumSeats': 20,	'EventStepSeats': 2,	'EventDefaultTaxTicketPercent': 1.11,	'EventDefaultTaxSeatPercent': 1.22,	'EventStartDateTimeUTC': '2019-04-07 08:11:00',	'EventEndDateTimeUTC': '2019-04-07 08:12:00',	'EventSaleStartDateTimeUTC': '2019-04-07 08:13:00',	'EventSaleEndDateTimeUTC': '2019-04-07 08:14:00',	'EventScanStartDateTimeUTC': '2019-04-07 08:15:00',	'EventScanEndDateTimeUTC': '2019-04-07 08:16:00',	'EventHandlingFeeName': 'Bearbeitungsgebühr',	'EventHandlingFeeLabel': '§§HANDLINGFEE',	'EventHandlingFeeGrossInternal': 12.44,	'EventHandlingFeeGrossExternal': 12.33,	'EventHandlingFeeTaxPercent': 2.66,	'EventShippingCostName': 'Versandkosten',	'EventShippingCostLabel': '§§SHIPPINGCOST',	'EventShippingCostGrossInternal': 12.43,	'EventShippingCostGrossExternal': 12.45,	'EventShippingCostTaxPercent': 2.88,	'EventBillOrderNumberLabel': '§§BILL_ORDER_NUMBER',	'EventBillSubjectLabel': '§§BILL_SUBJECT',	'EventBillPayCashLabel': '§§BILL_PAY_CASH',	'EventBillPayTransferLabel': '§§BILL_PAY_TRANSFER',	'EventBillPayCreditcardLabel': '§§BILL_PAY_CREDITCARD',	'EventBillPayPayPalLabel': '§§BILL_PAY_PAYPAL',	'EventBillPayEPSLabel': '§§BILL_PAY_EPS',	'EventSendMailAddress': 'event.email@test.tld',	'EventSendMailServer': 'smtp.test.tld',	'EventSendMailServerPort': 25,	'EventSendMailUsername': 'username',	'EventSendMailPassword': 'password',	'EventSendMailSettingsJSON': '{"test":"value"}',	'EventMpayTestFlag': 1,	'EventMpayMerchantID': '1234567890',	'EventMpaySoapPassword': 'passWD',	'EventMpayTestMerchantID': '0987654321',	'EventMpayTestSoapPassword': 'PASSwd'});</code></pre>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="onUpdate"><span class="type-signature"></span>onUpdate<span class="signature">()</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="socket_event.js.html">socket_event.js</a>, <a href="socket_event.js.html#line166">line 166</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    update existing event
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>socket.on('event-update', (res)=>{console.log(res);});socket.on('event-update-err', (err)=>{console.log(err);});socket.emit('event-update', {	'EventID': 'ID of existing event',	'EventPromoterID': 'PromoterID | null',	'EventLocationID': 'LocationID | null',	'EventName': 'Event Name',	'EventPrefix': 'EPRE',	'EventPhone1': '+43123',	'EventPhone2': '+43456',	'EventFax': '+43789',	'EventEmail': 'event.email@test.tld',	'EventHomepage': 'http://eventhomepage.tld',	'EventSubdomain': 'epre-event-2019',	'EventStartBillNumber': 1234,	'EventMaximumSeats': 20,	'EventStepSeats': 2,	'EventDefaultTaxTicketPercent': 1.11,	'EventDefaultTaxSeatPercent': 1.22,	'EventStartDateTimeUTC': '2019-04-07 08:11:00',	'EventEndDateTimeUTC': '2019-04-07 08:12:00',	'EventSaleStartDateTimeUTC': '2019-04-07 08:13:00',	'EventSaleEndDateTimeUTC': '2019-04-07 08:14:00',	'EventScanStartDateTimeUTC': '2019-04-07 08:15:00',	'EventScanEndDateTimeUTC': '2019-04-07 08:16:00',	'EventHandlingFeeName': 'Bearbeitungsgebühr',	'EventHandlingFeeLabel': '§§HANDLINGFEE',	'EventHandlingFeeGrossInternal': 12.44,	'EventHandlingFeeGrossExternal': 12.33,	'EventHandlingFeeTaxPercent': 2.66,	'EventShippingCostName': 'Versandkosten',	'EventShippingCostLabel': '§§SHIPPINGCOST',	'EventShippingCostGrossInternal': 12.43,	'EventShippingCostGrossExternal': 12.45,	'EventShippingCostTaxPercent': 2.88,	'EventBillOrderNumberLabel': '§§BILL_ORDER_NUMBER',	'EventBillSubjectLabel': '§§BILL_SUBJECT',	'EventBillPayCashLabel': '§§BILL_PAY_CASH',	'EventBillPayTransferLabel': '§§BILL_PAY_TRANSFER',	'EventBillPayCreditcardLabel': '§§BILL_PAY_CREDITCARD',	'EventBillPayPayPalLabel': '§§BILL_PAY_PAYPAL',	'EventBillPayEPSLabel': '§§BILL_PAY_EPS',	'EventSendMailAddress': 'event.email@test.tld',	'EventSendMailServer': 'smtp.test.tld',	'EventSendMailServerPort': 25,	'EventSendMailUsername': 'username',	'EventSendMailPassword': 'password',	'EventSendMailSettingsJSON': '{"test":"value"}',	'EventMpayTestFlag': 1,	'EventMpayMerchantID': '1234567890',	'EventMpaySoapPassword': 'passWD',	'EventMpayTestMerchantID': '0987654321',	'EventMpayTestSoapPassword': 'PASSwd'});</code></pre>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="onDelete"><span class="type-signature"></span>onDelete<span class="signature">()</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="socket_event.js.html">socket_event.js</a>, <a href="socket_event.js.html#line187">line 187</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    delete existing event
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>socket.on('event-delete', (res)=>{console.log(res);});socket.on('event-delete-err', (err)=>{console.log(err);});socket.emit('event-delete', EventID);</code></pre>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="onFetch"><span class="type-signature"></span>onFetch<span class="signature">()</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="socket_event.js.html">socket_event.js</a>, <a href="socket_event.js.html#line208">line 208</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    fetch event
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>socket.on('event-fetch', (res)=>{console.log(res);});socket.on('event-fetch-err', (err)=>{console.log(err);});socket.emit('event-fetch', EventID);</code></pre>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="onFetchDetail"><span class="type-signature"></span>onFetchDetail<span class="signature">()</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="socket_event.js.html">socket_event.js</a>, <a href="socket_event.js.html#line233">line 233</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    fetch event detail
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>socket.on('event-fetch-detail', (res)=>{console.log(res);});socket.on('event-fetch-detail-err', (err)=>{console.log(err);});socket.emit('event-fetch-detail', EventID);</code></pre>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="onCopy"><span class="type-signature"></span>onCopy<span class="signature">()</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="socket_event.js.html">socket_event.js</a>, <a href="socket_event.js.html#line254">line 254</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    copy existing event
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>socket.on('event-copy', (res)=>{console.log(res);});socket.on('event-copy-err', (err)=>{console.log(err);});socket.emit('event-copy', {EventID: 'EventID', EventSubdomain: 'EventSubdomain', ...});</code></pre>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="onCheckPrefix"><span class="type-signature"></span>onCheckPrefix<span class="signature">()</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="socket_event.js.html">socket_event.js</a>, <a href="socket_event.js.html#line276">line 276</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    check if a prefix alread existscan be used in a frontend field and after ech key press call this to get if a event whith send prefix already exists
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>socket.on('event-check-prefix', (res)=>{console.log(res);});socket.on('event-check-prefix-err', (err)=>{console.log(err);});socket.emit('event-check-prefix', Prefix);</code></pre>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="onCheckSubdomain"><span class="type-signature"></span>onCheckSubdomain<span class="signature">()</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="socket_event.js.html">socket_event.js</a>, <a href="socket_event.js.html#line301">line 301</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    check if a subdomain alread existscan be used in a frontend field and after ech key press call this to get if a event whith send subdomain already exists
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>socket.on('event-check-subdomain', (res)=>{console.log(res);});socket.on('event-check-subdomain-err', (err)=>{console.log(err);});socket.emit('event-check-subdomain', Subdomain);</code></pre>
+    <pre class="prettyprint"><code>socket.on('sockets-tests-long-request', (res)=>{console.log(res);}); // milliseconds over respond
+socket.on('sockets-tests-long-request-err', (err)=>{console.log(err);}); // error occurred
+socket.emit('sockets-tests-long-request', {
+	'Timeout': 10000		// wait and respond in milliseconds
+});</code></pre>
 
 
 
