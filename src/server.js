@@ -25,6 +25,23 @@ try {
 }
 
 global.LOG = new RmLog(config.log);
+global.FILES = __dirname + '/../files';
+
+// check for files directory (if not exists create)
+// only for local development (in docker container this will be a separate volume)
+try {
+	if (!fs.existsSync(FILES)) {
+		LOG.msg(logPrefix, 'files directory does not exist!');
+		fs.mkdirSync(FILES);
+		LOG.msg(logPrefix, 'files directory created at "' + FILES + '"');
+	} else {
+		LOG.msg(logPrefix, 'files directory exists at "' + FILES + '"');
+	}
+} catch (e) {
+	console.error(e);
+	new Error('can´t create files directory!');
+	process.exit(1);
+}
 
 function start() {
 	if (config) {
