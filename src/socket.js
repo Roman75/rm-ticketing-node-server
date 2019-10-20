@@ -20,6 +20,8 @@ import SocketTable from './socket_table';
 import SocketTicket from './socket_ticket';
 import SocketUser from './socket_user';
 
+import SocketsTestsLongRequest from './sockets_tests_long_request';
+
 /**
  * socket.io server connections<br>
  * <br>
@@ -81,6 +83,8 @@ class Socket extends Helpers {
 			new SocketTable(client);
 			new SocketTicket(client);
 			new SocketUser(client);
+
+			new SocketsTestsLongRequest(client);
 
 		});
 
