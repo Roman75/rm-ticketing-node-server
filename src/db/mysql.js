@@ -2,7 +2,7 @@ import Helpers from './../helpers';
 import mysql from 'mysql';
 import _ from 'lodash';
 
-const logPrefix = 'MYSQL   ';
+const logPrefix = 'node    ';
 
 class MySql extends Helpers {
 
@@ -17,7 +17,7 @@ class MySql extends Helpers {
 		this._debug = false;
 		this._translate = {};
 		this._pool = mysql.createPool(_.extend(config.conn, {multipleStatements: true}));
-		this._log('created pool with ' + config.conn.connectionLimit + ' connection(s)');
+		LOG.msg(logPrefix, 'created pool with ' + config.conn.connectionLimit + ' connection(s)');
 	}
 
 	/**
