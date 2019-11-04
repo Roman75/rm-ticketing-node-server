@@ -174,6 +174,11 @@ class Event extends Module {
 		});
 	}
 
+	fetchAll() {
+		// extend where condition for user access rights
+		return DB.promiseSelect(this.table, null, null);
+	}
+
 	copy(values) {
 		return new Promise((resolve, reject) => {
 			let newEvent = {};

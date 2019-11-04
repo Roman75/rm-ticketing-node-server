@@ -21,6 +21,7 @@ class SocketEvent extends Helpers {
 		this.onUpdate();
 		this.onDelete();
 		this.onFetch();
+		this.onFetchAll();
 		this.onFetchDetail();
 		this.onCopy();
 		this.onCheckPrefix();
@@ -210,6 +211,27 @@ class SocketEvent extends Helpers {
 		this._client.on(evt, EventID => {
 			const event = new Event(this._client.id);
 			event.fetch(EventID).then(res => {
+				this._client.emit(evt, res);
+				this.logSocketMessage(this._client.id, evt, res);
+			}).catch(err => {
+				this._client.emit(evt + '-err', err);
+				this.logSocketError(this._client.id, evt, err);
+			});
+		});
+	}
+
+	/**
+	 * fetch all events
+	 * @example
+	 * socket.on('event-fetch-all', (res)=>{console.log(res);});
+	 * socket.on('event-fetch-all-err', (err)=>{console.log(err);});
+	 * socket.emit('event-fetch-all');
+	 */
+	onFetchAll() {
+		const evt = 'event-fetch-all';
+		this._client.on(evt, () => {
+			const event = new Event(this._client.id);
+			event.fetchAll().then(res => {
 				this._client.emit(evt, res);
 				this.logSocketMessage(this._client.id, evt, res);
 			}).catch(err => {
