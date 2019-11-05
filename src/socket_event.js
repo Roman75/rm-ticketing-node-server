@@ -205,12 +205,15 @@ class SocketEvent extends Helpers {
 	 * socket.on('event-fetch', (res)=>{console.log(res);});
 	 * socket.on('event-fetch-err', (err)=>{console.log(err);});
 	 * socket.emit('event-fetch', EventID);
+	 * returned fields:
+	 *
 	 */
 	onFetch() {
 		const evt = 'event-fetch';
 		this._client.on(evt, EventID => {
 			const event = new Event(this._client.id);
-			event.fetch(EventID).then(res => {
+			const fields = ['EventID', 'EventName', 'EventPrefix', 'EventPhone1', 'EventPhone2', 'EventFax', 'EventEmail', 'EventHomepage'];
+			event.fetch(EventID, fields).then(res => {
 				this._client.emit(evt, res);
 				this.logSocketMessage(this._client.id, evt, res);
 			}).catch(err => {
@@ -231,7 +234,8 @@ class SocketEvent extends Helpers {
 		const evt = 'event-fetch-all';
 		this._client.on(evt, () => {
 			const event = new Event(this._client.id);
-			event.fetchAll().then(res => {
+			const fields = ['EventID', 'EventName', 'EventPrefix', 'EventPhone1', 'EventPhone2', 'EventFax', 'EventEmail', 'EventHomepage'];
+			event.fetchAll(fields, 'EventName').then(res => {
 				this._client.emit(evt, res);
 				this.logSocketMessage(this._client.id, evt, res);
 			}).catch(err => {

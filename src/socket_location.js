@@ -100,10 +100,10 @@ class SocketLocation extends Helpers {
 	 */
 	onDelete(client) {
 		const evt = 'location-delete';
-		this._client.on(evt, (id) => {
+		this._client.on(evt, (LocationID) => {
 			const location = new Location(this._client.id);
-			location.delete(id).then((res) => {
-				this._client.emit(evt, id);
+			location.delete(LocationID).then((res) => {
+				this._client.emit(evt, LocationID);
 				this.logSocketMessage(this._client.id, evt, res);
 			}).catch((err) => {
 				this._client.emit(evt + '-err', err);
@@ -122,9 +122,9 @@ class SocketLocation extends Helpers {
 	 */
 	onFetch(client) {
 		const evt = 'location-fetch';
-		this._client.on(evt, (id) => {
+		this._client.on(evt, (LocationID) => {
 			const location = new Location(this._client.id);
-			location.fetch(id).then((res) => {
+			location.fetch(LocationID).then((res) => {
 				this._client.emit(evt, res);
 				this.logSocketMessage(this._client.id, evt, res);
 			}).catch((err) => {

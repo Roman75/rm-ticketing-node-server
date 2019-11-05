@@ -174,9 +174,9 @@ class Event extends Module {
 		});
 	}
 
-	fetchAll() {
+	fetchAll(fields = null, order = null) {
 		// extend where condition for user access rights
-		return DB.promiseSelect(this.table, null, null);
+		return DB.promiseSelect(this.table, fields, null, order);
 	}
 
 	copy(values) {
