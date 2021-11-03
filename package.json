@@ -33,7 +33,7 @@
     "rand-token": "^0.4.0",
     "rm-log": "^1.2.9",
     "socket.io": "^2.3.0",
-    "validator": "^11.1.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.3",
